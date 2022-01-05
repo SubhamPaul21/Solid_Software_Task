@@ -3,6 +3,6 @@ This is my test application for Solid Software Trainee Position
 
 Here are some screenshots for the app -->
 
-![Basic App](https://user-images.githubusercontent.com/28836100/148221069-fdd1aff3-061d-4c86-8831-a6fb9ef9ec2e.png)
-![Change 1](https://user-images.githubusercontent.com/28836100/148221102-45be9f39-79e8-43c4-945d-db570bdb286a.png)
-![Change 2](https://user-images.githubusercontent.com/28836100/148221134-1bc557ee-01c3-49ad-bca1-c75b0fe66448.png)
+![Basic App](https://user-images.githubusercontent.com/28836100/148221927-555d4de8-45c3-40f3-9eaa-8be8d489f652.png)
+![Change 1](https://user-images.githubusercontent.com/28836100/148221950-c4c5de7e-7c69-4725-bbeb-836a8f752b58.png)
+![Change 2](https://user-images.githubusercontent.com/28836100/148221977-e85a53be-4514-4d5e-83b5-54c110bdc1e7.png)
