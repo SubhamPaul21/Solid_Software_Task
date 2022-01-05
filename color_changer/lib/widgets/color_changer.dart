@@ -15,7 +15,7 @@ class _ChangeColorState extends State<ChangeColor> {
   final Random _random = Random();
 
   // method to change background color in stateful widget
-  void _changeColor() {
+  void _changeColor(context) {
     setState(() {
       _backgroundColor = Color.fromARGB(
         _random.nextInt(256),
@@ -26,12 +26,26 @@ class _ChangeColorState extends State<ChangeColor> {
     });
     // ignore: avoid_print
     print("Color: $_backgroundColor");
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: Text(
+        "Hurray, you changed the color :D ",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 16.0,
+        ),
+      ),
+      duration: Duration(
+        seconds: 1,
+      ),
+      backgroundColor: Colors.amber,
+    ));
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _changeColor(),
+      onTap: () => _changeColor(context),
       child: Container(
         width: double.infinity,
         height: double.infinity,
@@ -40,6 +54,7 @@ class _ChangeColorState extends State<ChangeColor> {
           child: Text(
             "Hey there!",
             style: TextStyle(
+              fontWeight: FontWeight.bold,
               fontSize: 30,
             ),
           ),
