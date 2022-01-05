@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -34,8 +35,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void changeColor() {
-    print("Color Changed");
+  // variable for background color
+  Color _backgroundColor = Colors.white;
+  // creating object of Random Class
+  final Random _random = Random();
+
+  void _changeColor() {
+    setState(() {
+      _backgroundColor = Color.fromARGB(
+        //or with fromRGBO with fourth arg as _random.nextDouble(),
+        _random.nextInt(256),
+        _random.nextInt(256),
+        _random.nextInt(256),
+        _random.nextInt(256),
+      );
+    });
+    print("Color: $_backgroundColor");
   }
 
   @override
@@ -48,12 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: GestureDetector(
         onTap: () {
-          print("Container clicked");
+          _changeColor();
         },
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.green,
+          color: _backgroundColor,
           child: const Center(
             child: Text(
               "Hey there!",
