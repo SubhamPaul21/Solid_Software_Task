@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Solid Software',
       theme: ThemeData(
         // This is the theme of your application.
         primarySwatch: Colors.blue,
@@ -34,17 +34,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void changeColor() {
+    print("Color Changed");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+        ),
       ),
-      body: const Center(
-        child: Text(
-          "Hey there!",
-          style: TextStyle(
-            fontSize: 30,
+      body: GestureDetector(
+        onTap: () {
+          print("Container clicked");
+        },
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.green,
+          child: const Center(
+            child: Text(
+              "Hey there!",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
           ),
         ),
       ),
