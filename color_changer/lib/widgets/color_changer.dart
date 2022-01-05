@@ -18,7 +18,7 @@ class _ChangeColorState extends State<ChangeColor> {
   void _changeColor(context) {
     setState(() {
       _backgroundColor = Color.fromARGB(
-        _random.nextInt(256),
+        255,
         _random.nextInt(256),
         _random.nextInt(256),
         _random.nextInt(256),
@@ -26,6 +26,7 @@ class _ChangeColorState extends State<ChangeColor> {
     });
     // ignore: avoid_print
     print("Color: $_backgroundColor");
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text(
         "Hurray, you changed the color :D ",
@@ -36,7 +37,7 @@ class _ChangeColorState extends State<ChangeColor> {
         ),
       ),
       duration: Duration(
-        seconds: 1,
+        milliseconds: 500,
       ),
       backgroundColor: Colors.amber,
     ));
