@@ -53,7 +53,7 @@ class _ChangeColorState extends State<ChangeColor> {
         color: _backgroundColor,
         child: const Center(
           child: Text(
-            "Hey there!",
+            "Hey there",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
