@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+
+import './widgets/color_changer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,60 +26,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  // variable for background color
-  Color _backgroundColor = Colors.white;
-  // creating object of Random Class
-  final Random _random = Random();
-
-  void _changeColor() {
-    setState(() {
-      _backgroundColor = Color.fromARGB(
-        //or with fromRGBO with fourth arg as _random.nextDouble(),
-        _random.nextInt(256),
-        _random.nextInt(256),
-        _random.nextInt(256),
-        _random.nextInt(256),
-      );
-    });
-    print("Color: $_backgroundColor");
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-        ),
+        title: Text(title),
       ),
-      body: GestureDetector(
-        onTap: () {
-          _changeColor();
-        },
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: _backgroundColor,
-          child: const Center(
-            child: Text(
-              "Hey there!",
-              style: TextStyle(
-                fontSize: 30,
-              ),
-            ),
-          ),
-        ),
-      ),
+      body: const ChangeColor(),
     );
   }
 }
